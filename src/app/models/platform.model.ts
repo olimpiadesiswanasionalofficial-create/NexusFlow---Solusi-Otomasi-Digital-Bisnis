@@ -1,4 +1,4 @@
-export type AppView = 'landing' | 'demo' | 'checkout' | 'member' | 'admin';
+export type AppView = 'landing' | 'demo' | 'checkout';
 
 export interface UserAccount {
   id: string;

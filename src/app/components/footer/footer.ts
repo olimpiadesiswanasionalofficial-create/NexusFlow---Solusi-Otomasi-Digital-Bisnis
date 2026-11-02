@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { ProjectService } from '../../services/project.service';
 
 @Component({
   selector: 'app-footer',
@@ -83,14 +82,14 @@ import { ProjectService } from '../../services/project.service';
             </ul>
 
             <div class="pt-3">
-              <button
-                type="button"
-                (click)="openPortal()"
+              <a
+                href="https://dashboard-nexus-black.vercel.app/"
+                (click)="openDashboard($event)"
                 class="w-full inline-flex items-center justify-center gap-1.5 rounded-lg border border-zinc-700 bg-zinc-900 py-2 px-3 text-xs font-semibold text-zinc-200 hover:text-white hover:border-emerald-500 transition-colors"
               >
-                <mat-icon class="text-xs text-emerald-400">dashboard</mat-icon>
-                <span>Buka Dashboard Klien</span>
-              </button>
+                <mat-icon class="text-xs text-emerald-400">login</mat-icon>
+                <span>Login Dashboard</span>
+              </a>
             </div>
           </div>
 
@@ -113,9 +112,10 @@ import { ProjectService } from '../../services/project.service';
   `,
 })
 export class FooterComponent {
-  private projectService = inject(ProjectService);
-
-  openPortal() {
-    this.projectService.showClientPortal();
+  openDashboard(event?: Event) {
+    if (event) event.preventDefault();
+    if (typeof window !== 'undefined') {
+      window.location.href = 'https://dashboard-nexus-black.vercel.app/';
+    }
   }
 }

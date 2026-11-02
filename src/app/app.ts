@@ -22,8 +22,6 @@ import { PaymentModalComponent } from './components/payment-modal/payment-modal'
 import { WhatsAppModalComponent } from './components/whatsapp-modal/whatsapp-modal';
 import { ClientPortalComponent } from './components/client-portal/client-portal';
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page';
-import { MemberDashboardComponent } from './components/member-dashboard/member-dashboard';
-import { AdminPanelComponent } from './components/admin-panel/admin-panel';
 
 @Component({
   selector: 'app-root',
@@ -50,8 +48,6 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel';
     WhatsAppModalComponent,
     ClientPortalComponent,
     CheckoutPageComponent,
-    MemberDashboardComponent,
-    AdminPanelComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

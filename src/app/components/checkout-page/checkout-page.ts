@@ -320,14 +320,14 @@ import { formatRupiah } from '../../services/project-calculator';
               </div>
 
               <div class="pt-2">
-                <button
-                  type="button"
-                  (click)="goToMemberDashboard()"
+                <a
+                  href="https://dashboard-nexus-black.vercel.app/"
+                  (click)="goToMemberDashboard($event)"
                   class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 py-3.5 px-6 text-xs font-bold text-zinc-950 hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20 active:scale-95"
                 >
-                  <mat-icon class="text-sm">dashboard</mat-icon>
-                  <span>Masuk ke Member Dashboard Sekarang</span>
-                </button>
+                  <mat-icon class="text-sm">login</mat-icon>
+                  <span>Login ke Dashboard Sekarang</span>
+                </a>
               </div>
             </div>
           }
@@ -455,7 +455,10 @@ export class CheckoutPageComponent {
     }, 1200);
   }
 
-  goToMemberDashboard() {
-    this.platformService.setView('member');
+  goToMemberDashboard(event?: Event) {
+    if (event) event.preventDefault();
+    if (typeof window !== 'undefined') {
+      window.location.href = 'https://dashboard-nexus-black.vercel.app/';
+    }
   }
 }

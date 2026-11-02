@@ -1,6 +1,8 @@
 {
-  "name": "NexusFlow - Solusi Website & Otomasi Digital Bisnis",
+  "name": "NexusFlow - Solusi Otomasi Digital Bisnis",
   "description": "Miliki Karyawan AI Anda Sekarang dari NexusFlow (PT. CAHAYA ARSYA GEMILANG). 5 Karyawan AI pintar siap kerja 24/7 dan kasir pembayaran otomatis QRIS hanya 99 ribu saja perbulan.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

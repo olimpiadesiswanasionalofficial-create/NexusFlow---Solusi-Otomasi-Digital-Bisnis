@@ -266,8 +266,8 @@ import { formatRupiah } from '../../services/project-calculator';
                     (click)="goToDashboard()"
                     class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 py-3.5 px-4 text-xs font-bold text-zinc-950 hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20 active:scale-95 focus-visible:ring-2 focus-visible:ring-emerald-300"
                   >
-                    <mat-icon class="text-sm">dashboard</mat-icon>
-                    <span>Buka Dashboard Klien Saya Sekarang</span>
+                    <mat-icon class="text-sm">login</mat-icon>
+                    <span>Login ke Dashboard NexusFlow</span>
                   </button>
                 </div>
 
@@ -307,7 +307,9 @@ export class PaymentModalComponent {
 
   goToDashboard() {
     this.projectService.closePaymentModal();
-    this.projectService.showClientPortal();
+    if (typeof window !== 'undefined') {
+      window.location.href = 'https://dashboard-nexus-black.vercel.app/';
+    }
   }
 
   closeModal() {

@@ -21,10 +21,8 @@ import {
 export class PlatformService {
   // Navigation View State
   readonly currentView = signal<AppView>('landing');
-  readonly memberSidebarActive = signal<string>('dashboard');
   readonly demoTabActive = signal<string>('beranda');
   readonly demoViewportMode = signal<'desktop' | 'mobile'>('desktop');
-  readonly adminTabActive = signal<string>('dashboard');
 
   // Modals & drawers
   readonly isLoginModalOpen = signal<boolean>(false);
@@ -470,23 +468,12 @@ export class PlatformService {
     }
   }
 
-  setMemberTab(tab: string) {
-    this.memberSidebarActive.set(tab);
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-
   setDemoTab(tab: string) {
     this.demoTabActive.set(tab);
   }
 
   setDemoViewport(mode: 'desktop' | 'mobile') {
     this.demoViewportMode.set(mode);
-  }
-
-  setAdminTab(tab: string) {
-    this.adminTabActive.set(tab);
   }
 
   // Quiz methods

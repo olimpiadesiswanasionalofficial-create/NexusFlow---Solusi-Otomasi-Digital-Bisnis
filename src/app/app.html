@@ -96,20 +96,6 @@
       <app-checkout-page></app-checkout-page>
     </main>
 
-  } @else if (platformService.currentView() === 'member') {
-    
-    <!-- Dedicated SaaS Member Dashboard (Section 30) -->
-    <main class="flex-1">
-      <app-member-dashboard></app-member-dashboard>
-    </main>
-
-  } @else if (platformService.currentView() === 'admin') {
-    
-    <!-- Superadmin Control Panel (Section 31) -->
-    <main class="flex-1">
-      <app-admin-panel></app-admin-panel>
-    </main>
-
   }
 
   <!-- Global Modals & Simulated Payment Gateway -->
