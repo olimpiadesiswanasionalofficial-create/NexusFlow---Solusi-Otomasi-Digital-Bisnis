@@ -1,0 +1,118 @@
+<div class="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col font-sans selection:bg-emerald-500/30 selection:text-emerald-300">
+  
+  <!-- VIEW SWITCHER ROUTING -->
+  @if (platformService.currentView() === 'landing') {
+    
+    @if (projectService.activeView() === 'landing') {
+      <!-- Top Announcement Bar (Section 1) -->
+      <app-announcement-bar></app-announcement-bar>
+
+      <!-- Navbar (Section 2) -->
+      <app-navbar></app-navbar>
+
+      <!-- Main Long-Form Sales Landing Page -->
+      <main class="flex-1">
+        <!-- Hero Section (Section 3) -->
+        <app-hero></app-hero>
+
+        <!-- Video Explanation (Section 4) -->
+        <app-video-player></app-video-player>
+
+        <!-- Interactive Application Demo (Section 5) -->
+        <app-interactive-demo></app-interactive-demo>
+
+        <!-- 5 AI Employee Modules (Section 6) -->
+        <app-features></app-features>
+
+        <!-- Reality of Digital Business Cost & Interactive ROI Calculator (Section 7 & 8) -->
+        <app-cost-calculator></app-cost-calculator>
+
+        <!-- Two Business Scenarios & Dalaman Aplikasi (Section 9 & 10) -->
+        <app-scenarios></app-scenarios>
+
+        <!-- Practical Solutions & Web Types -->
+        <app-solutions></app-solutions>
+
+        <!-- Interactive Project Estimator -->
+        <app-estimator></app-estimator>
+
+        <!-- 12-Step How It Works & 30-Day Implementation Roadmap (Section 17 & 18) -->
+        <app-roadmap></app-roadmap>
+
+        <!-- Interactive Business Plan Generator Quiz (Section 24) -->
+        <app-quiz></app-quiz>
+
+        <!-- Why Choose Our Platform (Section 22) -->
+        <app-comparison></app-comparison>
+
+        <!-- What You Get, Pricing Stack & Guarantee (Section 26, 27, 28) -->
+        <app-pricing></app-pricing>
+
+        <!-- FAQ in Layman Indonesian -->
+        <app-faq></app-faq>
+      </main>
+
+      <!-- Footer with PT. CAHAYA ARSYA GEMILANG Legal Info -->
+      <app-footer></app-footer>
+
+    } @else {
+      <!-- Real-Time Client Progress Tracking Dashboard -->
+      <main class="flex-1">
+        <app-client-portal></app-client-portal>
+      </main>
+    }
+
+  } @else if (platformService.currentView() === 'demo') {
+    
+    <!-- Dedicated Full Interactive Application Demo View -->
+    <div class="min-h-screen bg-zinc-950 flex flex-col">
+      <div class="sticky top-0 z-40 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-md px-4 sm:px-8 py-3 flex items-center justify-between">
+        <button
+          type="button"
+          (click)="platformService.setView('landing')"
+          class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:text-white transition-colors"
+        >
+          <mat-icon class="text-xs">arrow_back</mat-icon>
+          <span>Kembali ke Beranda</span>
+        </button>
+        <span class="text-xs font-bold text-white font-mono">NEXUSFLOW FULL INTERACTIVE DEMO</span>
+        <button
+          type="button"
+          (click)="platformService.setView('checkout')"
+          class="rounded-lg bg-emerald-500 px-3.5 py-1.5 text-xs font-bold text-zinc-950 hover:bg-emerald-400"
+        >
+          Beli Sekarang
+        </button>
+      </div>
+      <div class="flex-1 py-8">
+        <app-interactive-demo></app-interactive-demo>
+      </div>
+    </div>
+
+  } @else if (platformService.currentView() === 'checkout') {
+    
+    <!-- Dedicated 3-Step Checkout Page (Section 29) -->
+    <main class="flex-1">
+      <app-checkout-page></app-checkout-page>
+    </main>
+
+  } @else if (platformService.currentView() === 'member') {
+    
+    <!-- Dedicated SaaS Member Dashboard (Section 30) -->
+    <main class="flex-1">
+      <app-member-dashboard></app-member-dashboard>
+    </main>
+
+  } @else if (platformService.currentView() === 'admin') {
+    
+    <!-- Superadmin Control Panel (Section 31) -->
+    <main class="flex-1">
+      <app-admin-panel></app-admin-panel>
+    </main>
+
+  }
+
+  <!-- Global Modals & Simulated Payment Gateway -->
+  <app-payment-modal></app-payment-modal>
+  <app-whatsapp-modal></app-whatsapp-modal>
+</div>
